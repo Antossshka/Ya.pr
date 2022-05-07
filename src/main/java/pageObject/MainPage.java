@@ -1,0 +1,100 @@
+package pageObject;
+
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+
+public class MainPage {
+
+    public final String Url = "https://stellarburgers.nomoreparties.site/";
+
+    //Элементы
+    @FindBy(how = How.XPATH, using = ".//button[text()='Войти в аккаунт']")
+    private SelenideElement loginButton;
+
+    @FindBy(how = How.XPATH, using = ".//button[text()='Оформить заказ']")
+    private SelenideElement makeOrderButton;
+
+    @FindBy(how = How.XPATH, using = "//*[text()='Булки']")
+    private SelenideElement bunsSectionNameLink;
+
+    @FindBy(how = How.XPATH, using = "//*[text()='Соусы']")
+    private SelenideElement saucesSectionNameLink;
+
+    @FindBy(how = How.XPATH, using = "//*[text()='Начинки']")
+    private SelenideElement ingredientsSectionNameLink;
+
+    @FindBy(how = How.XPATH, using = "//img[@alt='Мини-салат Экзо-Плантаго']")
+    private SelenideElement exoPlantagonSaladImage;
+
+    @FindBy(how = How.XPATH, using = "//img[@alt='Соус Spicy-X']")
+    private SelenideElement spicyXSauceImage;
+
+    @FindBy(how = How.XPATH, using = "//img[@alt='Краторная булка N-200i']")
+    private SelenideElement cardboardBunImage;
+
+
+    //Шаги. Авторизация и регистрация
+    @Step("Нажать на кнопку 'Войти в аккаунт' на главой странице")
+    public void clickToLoginButton() {
+        loginButton.click();
+    }
+
+
+
+    //Шаги. Конструктор
+    @Step("Открыть раздел 'Начинки'")
+    public void openIngredientSection() {
+        ingredientsSectionNameLink.shouldBe(Condition.visible).click();
+    }
+
+    @Step("Открыть раздел 'Соусы'")
+    public void openSaucesSection() {
+        saucesSectionNameLink.shouldBe(Condition.visible).click();
+    }
+
+    @Step("Открыть раздел 'Булки'")
+    public void openBunsSection() {
+        spicyXSauceImage.scrollIntoView(true);
+        bunsSectionNameLink.shouldBe(Condition.visible).click();
+    }
+
+    @Step("Скролл к элементу 'Мини-салат Экзо-Плантагон'")
+    public void scrollToExoPlantagonSalad() {
+        exoPlantagonSaladImage.scrollIntoView(true);
+    }
+
+    @Step("Скролл к элементу 'Соус Spicy-X'")
+    public void scrollToSpicyXSauce() {
+        spicyXSauceImage.scrollIntoView(true);
+    }
+
+    @Step("Скролл к элементу 'Картонная булка N-200i'")
+    public void scrollToCardboardBun() {
+        cardboardBunImage.scrollIntoView(true);
+    }
+
+
+    @Step("Проверить, что разде 'Начинки' открылся")
+    public boolean isIngredientsSectionOpen() {
+        return exoPlantagonSaladImage.is(Condition.visible);
+    }
+
+    @Step("Проверить, что разде 'Соусы' открылся")
+    public boolean isSaucesSectionOpen() {
+        return spicyXSauceImage.is(Condition.visible);
+    }
+
+    @Step("Проверить, что разде 'Булки' открылся")
+    public boolean isBunsSectionOpen() {
+        return cardboardBunImage.is(Condition.visible);
+    }
+
+    @Step("Проверить, что кнопка 'Сделать заказ' отображается")
+    public boolean isMakeOrderButtonDisplayed() {
+        return makeOrderButton.shouldBe(Condition.visible).isDisplayed();
+    }
+
+}
