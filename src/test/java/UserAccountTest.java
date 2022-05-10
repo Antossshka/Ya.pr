@@ -29,7 +29,7 @@ public class UserAccountTest {
     public void setUp() throws InterruptedException {
         open(registerPage.Url);
         user.Registration();
-        Thread.sleep(500);
+        open(loginPage.Url);
         user.LogIn();
         header.clickToAccountButton();
     }

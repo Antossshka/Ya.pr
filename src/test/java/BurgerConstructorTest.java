@@ -20,25 +20,25 @@ public class BurgerConstructorTest {
     @DisplayName("Открыть раздел 'Начинки' по клику на название раздела")
     public void openIngredientsSectionFromSectionNameLink() {
         mainPage.openIngredientSection();
-        Assert.assertTrue( mainPage.isIngredientsSectionOpen());
+        Assert.assertTrue(mainPage.isIngredientsSectionOpen());
     }
 
     @Test
     @DisplayName("Открыть раздел 'Начинки' по скроллу к элементу")
     public void openIngredientsSectionByScrollToIngredientImage() {
         mainPage.scrollToExoPlantagonSalad();
-        Assert.assertTrue( mainPage.isIngredientsSectionOpen());
+        Assert.assertTrue(mainPage.isIngredientsSectionOpen());
     }
 
     @Test
     @DisplayName("Открыть раздел 'Соусы' по клику на название раздела")
     public void openSaucesSectionFromSectionNameLink(){
         mainPage.openSaucesSection();
-        Assert.assertTrue( mainPage.isSaucesSectionOpen());
+        Assert.assertTrue(mainPage.isSaucesSectionOpen());
     }
 
     @Test
-    @DisplayName("Открыть раздел 'Соусы' по скроллу к элементы")
+    @DisplayName("Открыть раздел 'Соусы' по скроллу к элементу")
     public void openSaucesSectionByScrollToSauceImage() {
         mainPage.scrollToSpicyXSauce();
         Assert.assertTrue(mainPage.isSaucesSectionOpen());
@@ -52,7 +52,7 @@ public class BurgerConstructorTest {
     }
 
     @Test
-    @DisplayName("Открыть раздел 'Булки' по скроллу к элементы")
+    @DisplayName("Открыть раздел 'Булки' по скроллу к элементу")
     public void openBunsSectionByScrollToBunsImage() {
         mainPage.scrollToCardboardBun();
         Assert.assertTrue(mainPage.isBunsSectionOpen());

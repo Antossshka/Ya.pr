@@ -79,17 +79,19 @@ public class MainPage {
 
     @Step("Проверить, что разде 'Начинки' открылся")
     public boolean isIngredientsSectionOpen() {
-        return exoPlantagonSaladImage.is(Condition.visible);
+        return ingredientsSectionNameLink.isEnabled();
     }
 
     @Step("Проверить, что разде 'Соусы' открылся")
     public boolean isSaucesSectionOpen() {
-        return spicyXSauceImage.is(Condition.visible);
+
+        return saucesSectionNameLink.isEnabled();
     }
 
     @Step("Проверить, что разде 'Булки' открылся")
     public boolean isBunsSectionOpen() {
-        return cardboardBunImage.is(Condition.visible);
+
+        return bunsSectionNameLink.isEnabled();
     }
 
     @Step("Проверить, что кнопка 'Сделать заказ' отображается")
