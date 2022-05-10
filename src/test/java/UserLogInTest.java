@@ -1,4 +1,3 @@
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
@@ -9,7 +8,8 @@ import pageObject.*;
 import supportClasses.RandomGenerator;
 import supportClasses.User;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.page;
 
 public class UserLogInTest {
 

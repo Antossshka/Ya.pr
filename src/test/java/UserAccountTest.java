@@ -1,14 +1,13 @@
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import pageObject.LoginPage;
-import pageObject.UserAccount;
 import pageObject.Header;
+import pageObject.LoginPage;
 import pageObject.RegisterPage;
+import pageObject.UserAccount;
 import supportClasses.RandomGenerator;
 import supportClasses.User;
 
