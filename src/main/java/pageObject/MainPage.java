@@ -35,6 +35,18 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//img[@alt='Краторная булка N-200i']")
     private SelenideElement cardboardBunImage;
 
+    @FindBy(how = How.XPATH, using =
+            "//*[contains(@class, 'tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect')]/span[text()='Булки']")
+    private SelenideElement selectedBunSection;
+
+    @FindBy(how = How.XPATH, using =
+            "//*[contains(@class, 'tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect')]/span[text()='Соусы']")
+    private SelenideElement selectedSaucesSection;
+
+    @FindBy(how = How.XPATH, using =
+            "//*[contains(@class, 'tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect')]/span[text()='Начинки']")
+    private SelenideElement selectedIngredientsSection;
+
 
     //Шаги. Авторизация и регистрация
     @Step("Нажать на кнопку 'Войти в аккаунт' на главой странице")
@@ -79,19 +91,19 @@ public class MainPage {
 
     @Step("Проверить, что разде 'Начинки' открылся")
     public boolean isIngredientsSectionOpen() {
-        return ingredientsSectionNameLink.isEnabled();
+        return selectedIngredientsSection.isDisplayed();
     }
 
     @Step("Проверить, что разде 'Соусы' открылся")
     public boolean isSaucesSectionOpen() {
 
-        return saucesSectionNameLink.isEnabled();
+        return selectedSaucesSection.isDisplayed();
     }
 
     @Step("Проверить, что разде 'Булки' открылся")
     public boolean isBunsSectionOpen() {
 
-        return bunsSectionNameLink.isEnabled();
+        return selectedBunSection.isDisplayed();
     }
 
     @Step("Проверить, что кнопка 'Сделать заказ' отображается")

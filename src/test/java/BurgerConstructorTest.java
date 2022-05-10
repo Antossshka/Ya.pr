@@ -1,5 +1,3 @@
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.WebDriverRunner;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,6 +45,7 @@ public class BurgerConstructorTest {
     @Test
     @DisplayName("Открыть раздел 'Булки' по клику на название раздела")
     public void openBunsSectionFromSectionNameLink(){
+        mainPage.openIngredientSection();
         mainPage.openBunsSection();
         Assert.assertTrue(mainPage.isBunsSectionOpen());
     }
